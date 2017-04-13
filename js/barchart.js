@@ -20,3 +20,13 @@ var svg = d3.select('body').append('svg')
   .attr('height', fullHeight)
   .append('g')
     .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+var periodScale = d3.scaleBand()
+  .domain(periods)
+  .range([0, width])
+  .paddingInner(0.1);
+
+var inchesScale = d3.scaleLinear()
+  .domain([0, d3.max(snowpack, function(d) {return d.inches;})])
+  .range([height, 0])
+  .nice();
