@@ -26,9 +26,22 @@ var periodScale = d3.scaleBand()
   .range([0, width])
   .paddingInner(0.1);
 
+var bandwidth = periodScale.bandwidth();
+
+var maxInches = d3.max(snowpack, function(d) {return d.inches; });
 var inchesScale = d3.scaleLinear()
-  .domain([0, d3.max(snowpack, function(d) {return d.inches;})])
+  .domain([0, maxInches])
   .range([height, 0])
   .nice();
 
-var bandwidth = periodScale.bandwidth();
+var xAxis = d3.axisBottom(periodScale);
+var yAxis = d3.axisLeft(inchesScale);
+
+svg.append('g')
+  .classed('x axis', true)
+  .attr('transform', 'translate(0,' + height + ')')
+  .call(xAxis);
+
+var yAxisEle = svg.append('g')
+  .classed('y axis', true)
+  .call(yAxis);
