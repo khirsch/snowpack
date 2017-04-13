@@ -1,0 +1,13 @@
+body, html {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+svg {
+  display: block;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+}
