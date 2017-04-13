@@ -30,3 +30,5 @@ var inchesScale = d3.scaleLinear()
   .domain([0, d3.max(snowpack, function(d) {return d.inches;})])
   .range([height, 0])
   .nice();
+
+var bandwidth = periodScale.bandwidth();
