@@ -24,7 +24,7 @@ var svg = d3.select('body').append('svg')
 var periodScale = d3.scaleBand()
   .domain(periods)
   .range([0, width])
-  .paddingInner(0.1);
+  .padding(0.05);
 
 var bandwidth = periodScale.bandwidth();
 
