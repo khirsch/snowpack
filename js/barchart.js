@@ -65,6 +65,7 @@ var bars = barHolder.selectAll('rect.bar')
       return periodScale(d.period)
     })
     .attr('width', bandwidth)
+    .attr('fill', 'SkyBlue')
     .attr('y', function(d) {
       return inchesScale(d.inches);
     })
