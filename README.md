@@ -25,6 +25,7 @@ Please send any questions or concerns to katrina.hirsch@gmail.com.
 * HTML
 * CSS
 * JavaScript (D3)
+* Flaticon
 
 ### License
 
