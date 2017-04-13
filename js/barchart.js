@@ -56,3 +56,18 @@ var yText = yAxisEle.append('text')
 
 var barHolder = svg.append('g')
   .classed('bar-holder', true);
+
+var bars = barHolder.selectAll('rect.bar')
+    .data(snowpack)
+  .enter().append('rect')
+    .classed('bar', true)
+    .attr('x', function(d, i) {
+      return periodScale(d.period)
+    })
+    .attr('width', bandwidth)
+    .attr('y', function(d) {
+      return inchesScale(d.inches);
+    })
+    .attr('height', function(d) {
+      return height - inchesScale(d.inches);
+    });
