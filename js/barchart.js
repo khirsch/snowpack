@@ -45,3 +45,14 @@ svg.append('g')
 var yAxisEle = svg.append('g')
   .classed('y axis', true)
   .call(yAxis);
+
+var yText = yAxisEle.append('text')
+  .attr('transform', 'rotate(-90)translate(-' + height/2 + ', 0)')
+  .attr('dy', '-2.5em')
+  .style('text-anchor', 'middle')
+  .style('fill', 'black')
+  .style('font-size', 14)
+  .text('Inches');
+
+var barHolder = svg.append('g')
+  .classed('bar-holder', true);
